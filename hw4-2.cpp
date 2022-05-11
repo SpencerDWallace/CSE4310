@@ -1,4 +1,4 @@
-//g++ -o clique hw4-2.cpp
+// g++ -o clique hw4-2.cpp
 #include <cstdio>
 #include <vector>
 using namespace std;
@@ -122,7 +122,7 @@ void clique(int bound)
         }
 
       if(!check_clique()){
-        printf("eliminated vertex %d with bound %d\n", low_bound_index+1, low_bound);
+        printf("solution with %d has bound %d, checking solutions without %d\n", low_bound_index+1, low_bound, low_bound_index+1);
         eliminate(low_bound_index);
         swap_and_remove(low_bound_index);
       }
@@ -133,6 +133,7 @@ void clique(int bound)
       }
     }
 };
+
 
 int main(){
   for(int i = 0; i < 10; i++)
